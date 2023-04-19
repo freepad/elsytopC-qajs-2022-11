@@ -1,7 +1,7 @@
 import { nameIsValid, fullTrim, getTotal } from '../src/app.js'
 
 describe('Working condition of nameIsValid func', function () {
-    it('imports without error', function () {
+    it('Imports without error', function () {
         expect(nameIsValid).toBeDefined();
     });
     it('Does not get empty value', function () {
@@ -35,7 +35,7 @@ describe('Working condition of fullTrim func', function () {
 
 describe('Total amount parametric test', () => {
     it.each`
-   a    |  b    |  expected
+   a   |  b   |  expected
   ${[{ price: 10, quantity: 10 }]} | ${10} | ${90}
   ${[{ price: 10, quantity: 10 }]} | ${100} | ${0}
   ${[{ price: 10, quantity: 1 }, {price: 10, quantity: 9}]} | ${0} | ${100}
