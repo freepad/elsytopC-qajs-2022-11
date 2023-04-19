@@ -33,8 +33,19 @@ describe('Working condition of fullTrim func', function () {
     });
 })
 
-describe('Working condition of getTotal func', function () {
-    it('Imports without error', function () {
-        expect(getTotal).toBeDefined();
+describe('Total amount parametric test', () => {
+    it.each`
+   a    |  b    |  expected
+  ${[{ price: 10, quantity: 10 }]} | ${10} | ${90}
+  ${[{ price: 10, quantity: 10 }]} | ${100} | ${0}
+  ${[{ price: 10, quantity: 1 }, {price: 10, quantity: 9}]} | ${0} | ${100}
+  ${[{ price: 100, quantity: 5 }]} | ${'5'}| ${'error'}
+  ${[{ price: 100, quantity: 5 }]} | ${-1}| ${'error'}
+`('returns $expected when $a is added to $b', ({a, b, expected}) => {
+        if (expected === 'error') {
+            expect(() => getTotal(a, b)).toThrow();
+        } else {
+            expect(getTotal(a, b)).toBe(expected);
+        }
     });
 })
