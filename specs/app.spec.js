@@ -13,7 +13,7 @@ describe('Working condition of nameIsValid func', function () {
     it('Does not have less than 2 characters', function () {
         expect(nameIsValid('A')).toBeFalsy();
     });
-})
+});
 
 describe('Working condition of fullTrim func', function () {
     it('Imports without error', function () {
@@ -31,7 +31,7 @@ describe('Working condition of fullTrim func', function () {
     it('Empty object returns error', function () {
         expect(function () { return fullTrim({}) }).toThrow();
     });
-})
+});
 
 describe('Total amount parametric test', () => {
     it.each`
@@ -48,4 +48,4 @@ describe('Total amount parametric test', () => {
             expect(getTotal(a, b)).toBe(expected);
         }
     });
-})
+});
