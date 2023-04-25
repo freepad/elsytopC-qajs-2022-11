@@ -39,3 +39,13 @@ export const getTotal = (items = [], discount = 0) => {
     }, 0)
     return total - total * discount / 100;
 }
+
+/**
+ * Подсчет суммы значений в ключах объекта
+ * @param obj
+ */
+const getScore = (obj) => {
+    return Object.values(obj).reduce((acc, val) => acc + val, 0);
+}
+
+console.log(getScore({ Anna: 15, Olga: 15, Ivan: -5}))
