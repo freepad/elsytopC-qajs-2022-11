@@ -43,7 +43,7 @@ describe('Working condition of API for Bookstore service', function () {
 
     it('Creating user was successful', async function () {
          const body = {
-             "userName": "Loophero",
+             "userName": "First579api",
              "password": "rhghfgjuehYTBVVCFHYB35563783_$?@!"
          }
 
@@ -57,6 +57,7 @@ describe('Working condition of API for Bookstore service', function () {
 
         const data = await response.json()
         expect(data).toBeTruthy()
+        expect(response.status).toBe(201)
     });
 
     it('User auth failed, token is null', async function () {
@@ -84,8 +85,8 @@ describe('Working condition of API for Bookstore service', function () {
 
     it('User authorized successfully, token has been created', async function () {
         const body = {
-            "userName": "Mikkimouse",
-            "password": "123TYUghp&*^"
+            "userName": "Donaldduck",
+            "password": "TYfhghtyrhf4656*&^_-"
         }
 
         const response = await fetch('https://bookstore.demoqa.com/Account/v1/GenerateToken', {
@@ -98,5 +99,6 @@ describe('Working condition of API for Bookstore service', function () {
 
         const data = await response.json()
         expect(data).toBeTruthy()
+        expect(response.status).toBe(200)
     });
 })
