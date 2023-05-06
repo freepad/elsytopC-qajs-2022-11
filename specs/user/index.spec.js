@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker'
 import axios from "axios";
 
 describe('Working condition of user', () => {
-    describe.only('POST /Account/v1/GenerateToken', () => {
+    describe('POST /Account/v1/GenerateToken', () => {
         it('Generates token with correct username and password', async function () {
             const input = config.credentials;
 
