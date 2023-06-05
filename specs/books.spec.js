@@ -15,19 +15,19 @@ describe('Working condition of books API for user', () => {
     it('Add book to user list', async function () {
         const isbn = '9781449325862'
         const addBookResponse = await bookEntity.addBook({
-            userId: userId,
+            userId: config.userID,
             token: token,
-            isbn: isbn
+            isbns: [isbn]
         })
 
-        expect(addBook.status).toBe(201)
-        expect(addBook.body).toEqual({
+        expect(addBookResponse.body).toEqual({
             "books": [
                 {
                     "isbn": isbn 
                 }
             ]
         })
+        expect(addBookResponse.status).toBe(201)
         // это не очень хорошо, но можно тут сделать сразу три проверки
         // 1 добавление книги в список
         // 2 добавление книги в список повторно (проверка ошибки)
