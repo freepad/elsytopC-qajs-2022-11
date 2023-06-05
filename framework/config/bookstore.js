@@ -1,8 +1,8 @@
 const config = {
     url: 'https://bookstore.demoqa.com',
-    userID: '5aba1408-6f6a-43b5-973d-a7f0843eb960',
+    userID: '02576a48-fd63-404f-8d1f-09025e1d28d6',
     credentials: {
-        userName: 'Newtrywow',
+        userName: 'Newtrywow1',
         password: 'YUIfhgty567^&*',
     }
 }

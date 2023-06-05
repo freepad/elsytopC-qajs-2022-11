@@ -1,5 +1,3 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import fetch from "node-fetch";
 
 describe('Working condition of API for Bookstore service', function () {
